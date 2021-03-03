@@ -13,15 +13,15 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   s.default_subspec = 'Core'
+  s.ios.deployment_target = '6.0'
 
   s.subspec 'Core' do |core|
-    core.ios.deployment_target    = '6.0'
-    core.ios.vendored_framework   = 'ios/YYImage.framework'
+    core.ios.vendored_framework = 'ios/YYImage.framework'
   end
 
   s.subspec 'WebP' do |webp|
-    webp.ios.deployment_target    = '6.0'
-    webp.ios.vendored_framework   = 'ios/YYImage.framework, ios/WebP.framework'
+    webp.dependency 'YYImage/Core'
+    webp.ios.vendored_frameworks = 'ios/WebP.framework'
   end
 
 end
