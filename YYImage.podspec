@@ -20,8 +20,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'WebP' do |webp|
-    webp.dependency 'YYImage', "= #{s.version}"
-    webp.dependency 'YYImageWebP', "= #{s.version}"
+    webp.ios.deployment_target    = '6.0'
+    webp.ios.vendored_framework   = 'ios/YYImage.framework, ios/WebP.framework'
   end
 
 end
