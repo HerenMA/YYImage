@@ -16,11 +16,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.subspec 'Core' do |core|
-    core.ios.vendored_framework = 'ios/YYImage.framework'
-  end
-  
-  s.subspec 'WebP' do |webp|
-    webp.ios.vendored_frameworks = 'ios/*.framework'
+    core.ios.vendored_framework = 'ios/*.framework'
   end
 
 end
