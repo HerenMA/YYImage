@@ -13,16 +13,15 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
+  s.ios.deployment_target = '9.0'
   s.default_subspec = 'Core'
   
   s.subspec 'Core' do |core|
-    core.ios.deployment_target = '9.0'
     core.ios.vendored_framework = 'ios/YYImage.framework'
   end
   
   s.subspec 'WebP' do |webp|
-    webp.dependency 'YYImage/Core'
-    webp.ios.vendored_frameworks = 'ios/WebP.framework'
+    webp.ios.vendored_frameworks = 'ios/*.framework'
   end
   
 end
