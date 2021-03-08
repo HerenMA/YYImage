@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Framework' do |ss|
-    ss.ios.vendored_framework   = 'ios/YYImage.framework'
+    ss.ios.vendored_framework   = 'ios/YYImage.framework', 'Vendor/WebP.framework'
   end
   
   s.frameworks = 'UIKit', 'CoreFoundation', 'QuartzCore', 'AssetsLibrary', 'ImageIO', 'Accelerate', 'MobileCoreServices'
